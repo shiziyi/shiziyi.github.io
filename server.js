@@ -1,16 +1,30 @@
-const express = require("express");
-const app = express();
-const path = require("path");
-const exphbs = require("express-handlebars");
-const HTTP_PORT = process.env.PORT || 8080;
-app.engine('.hbs', exphbs({ extname: '.hbs' }));
-app.set('view engine', '.hbs');
 
-app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, "home.html"));
-    // res.send("World");
+var express = require("express");
+var app = express();
+var path = require("path");
+
+var HTTP_PORT = process.env.PORT || 8080;
+
+app.use(express.static('public'));
+app.use(express.static(__dirname + '/images'));
+app.get("/", (req,res) => {
+    res.sendFile(path.join(__dirname + "/home.html"));
+    //functions.myMap();
 });
 
-app.listen(HTTP_PORT, ()=>{
-    console.log("Now server is listening on: " + HTTP_PORT);
+app.get("/myProgram", (req, res) => {
+    res.redirect('https://github.com/Jasper-Shi');
+})
+
+
+app.get("/workHistory", (req, res) => {
+    res.sendFile(path.join(__dirname + "/views/workHistory.html"));
+})
+
+app.get("/contact", (req, res) => {
+    res.sendFile(path.join(__dirname + "/views/contact.html"));
+})
+
+app.listen(HTTP_PORT, () =>{
+    console.log("Server listening on: " + HTTP_PORT);
 });

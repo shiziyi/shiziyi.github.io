@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <title>Work History</title>
+    <link rel="stylesheet" href="css/site.css" type="text/css" />
+</head>
+<body>
+    <div class="header">
+	<header>
+        <div class="container">
+			<div class="row">
+				<div class="col-md-12">
+                    <img class="circularimg" src="/photo.jpg" />
+                     <h1 style="text-align: center">Work History</h1>
+                </div>
+                <div class="col-md-12>">
+                        
+                </div>
+			</div>
+        </div>
+        
+    </header>
+    <nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul>
+                        <li> <a href="/"> Home </a> </li> | 
+                        <li> <a href="/myProgram"> My Programs </a> </li> |  
+                        <li> <a href="/workHistory"> Work History </a> </li> |     
+                        <li> <a style="text-align: right" href="/contact"> Contact </a> </li>              
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </div>
+    <div class="main">
+            <table style="width:100%">
+                    <tr id="r0">
+                        <td><p>Gewu(Finding) Education, Baoding City, Hebei, China</p>
+                            <p>School Tutor</p>
+                        </td>
+                        <td style="text-align: right">From September 2016 to November 2016</td>
+                    </tr>
+                    <tr id="r1">
+                        <td><h3>Responsibilities: </h3></td>
+                        <td><p>• Adapted teaching style to unique needs of students from 1st grade to 6th grade </p>
+                            <p>• Subjects included math, history, biology, English and Chinese </p>
+                            <p>• Successfully tutored the first middle school student for the company through analyzing student’s tests to find out student’s weaknesses, and mainly focusing on the weaknesses to make a significant improvement</p>
+                            <p>• Welcomed by students through enthusiastically interacting with elementary school students, and teaching the middle school student simpler methods to solve questions quickly</p>
+                    </tr>
+                </table>
+                <h1 style="text-align: center; background-color: grey;">Location of Finding Education</h1>
+                <div id="map"></div>
+    </div>
+
+
+    <script>
+            function myMap() {  
+                var latlng = {lat: 38.8937236, lng: 115.5119324};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                  zoom: 4,
+                  center: latlng
+                });
+                var marker = new google.maps.Marker({
+                  position: latlng,
+                  map: map
+                });
+            }
+    </script>
+            
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuluPPqaDy7whTI5_ir5iNqQ7IGiFlkz8&callback=myMap"></script>
+    <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>© 2017 - Ziyi Shi</h2>
+                    </div>
+                </div>
+            </div>
+    </footer>
+</body>
+
+</html>
