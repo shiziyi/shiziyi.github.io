@@ -1,30 +1,61 @@
+const HTTP_PORT = 8080;
+const express = require("express");
+const exphbs = require("express-handlebars");
+const bodyParser = require('body-parser');
+const app = express();
+var dataServiceComments = require("./js/data-service-comments.js");
 
-var express = require("express");
-var app = express();
-var path = require("path");
-
-var HTTP_PORT = process.env.PORT || 8080;
-
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
-app.use(express.static(__dirname + '/images'));
-app.get("/", (req,res) => {
-    res.sendFile(path.join(__dirname + "/home.html"));
-    //functions.myMap();
+
+app.engine(".hbs", exphbs({
+    extname: ".hbs",
+    defaultLayout: 'layout',
+    helpers: {
+    equal: function (lvalue, rvalue, options) {
+    if (arguments.length < 3)
+    throw new Error("Handlebars Helper equal needs 2 parameters");
+    if (lvalue != rvalue) {
+    return options.inverse(this);
+    } else {
+    return options.fn(this);
+    }
+    },
+    inc: function(value, options)
+    {
+        return parseInt(value) + 1;
+    }
+    }
+   }));
+app.set("view engine", ".hbs");
+
+dataServiceComments.initialize();
+app.get("/about", function(req,res){
+    //res.sendFile(path.join(__dirname + "/views/about.html"));
+    dataServiceComments.getAllComments().then((data) => {
+        res.render("about", {data: data});
+    }).catch(() => {
+        res.render("about");
+    })
+});
+app.post("/about/addComment", (req, res) => {
+    dataServiceComments.addComment(req.body).then(() =>{
+        res.redirect("/about");
+    }).catch((err) => {
+        console.log(err);
+        res.redirect("/about");
+    })
 });
 
-app.get("/myProgram", (req, res) => {
-    res.redirect('https://github.com/Jasper-Shi');
-})
+app.post("/about/addReply", (req, res) => {
+    dataServiceComments.addReply(req.body).then(() => {
+        res.redirect("/about");
+    }).catch((err) => {
+        console.log(err);
+        res.redirect("/about");
+    })
+});
 
-
-app.get("/workHistory", (req, res) => {
-    res.sendFile(path.join(__dirname + "/views/workHistory.html"));
-})
-
-app.get("/contact", (req, res) => {
-    res.sendFile(path.join(__dirname + "/views/contact.html"));
-})
-
-app.listen(HTTP_PORT, () =>{
-    console.log("Server listening on: " + HTTP_PORT);
+app.listen(HTTP_PORT, ()=>{
+    console.log("Now server is listening on: " + HTTP_PORT);
 });

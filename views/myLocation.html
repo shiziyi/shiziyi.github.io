@@ -1,0 +1,106 @@
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>My Location</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+
+    <link href="../public/css/normalize.css" rel="stylesheet">
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/css/style.css" rel="stylesheet">
+    <link href="../public/css/cayman.css" rel="stylesheet">
+    <link href="../public/css/footer-distributed-with-address-and-phones.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+	  <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <section class="page-header1">
+        <h1 class="project-name">Ziyi Shi (Japser)</h1>
+        <h2 class="project-tagline">Enthusiastic and experienced IT professional with unique understanding of the needs of seeking to deliver exceptional results in the role of software developer, web developer or tester.</h2>
+        <a href="../index.html" class="btn">Home</a>
+        <a href="./projects.html" class="btn">Projects</a>
+        <a href="#" class="btn">Comment</a>
+        <a href="./myLocation.html" class="btn">My Location</a>
+    </section>
+
+    <section class="main-content">
+        <div id="map" style="width:100%; height:100%;"></div>
+    </section>
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+        <h3>Ziyi Shi</h3>
+
+        <p class="footer-links">
+            <a href="#">Home</a>
+            ·
+            <a href="#">Completed Courses</a>
+            ·
+                    <a href="#">Courses Under Study</a>
+                    ·
+            <a href="#">Transcript</a>
+        </p>
+
+        <p class="footer-company-name">Ziyi Shi &copy; 2018</p>
+        </div>
+
+        <div class="footer-center">
+
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>22 Sandbourne crescent</span> North York, Ontario, Canada</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+1 647 879 1740</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:JasperShi0@gmail.com">JasperShi0@gmail.com</a></p>
+        </div>
+
+        </div>
+
+        <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>About me</span>
+            Enthusiastic and experienced IT professional with unique understanding of the needs of seeking to deliver exceptional results in the role of software developer, web developer or tester.
+        </p>
+
+        <div class="footer-icons">
+
+            <a href="https://www.facebook.com/610757917qq"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/jasper-shi-95494714b"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/Jasper-Shi"><i class="fa fa-github"></i></a>
+
+        </div>
+
+        </div>
+
+    </footer>
+  </body>
+</html>
+
+<script>
+        function myMap() {  
+            var latlng = {lat: 43.7892552, lng: -79.3488023};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 4,
+              center: latlng
+            });
+            var marker = new google.maps.Marker({
+              position: latlng,
+              map: map
+            });
+        }
+</script>
+        
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuluPPqaDy7whTI5_ir5iNqQ7IGiFlkz8&callback=myMap"></script>

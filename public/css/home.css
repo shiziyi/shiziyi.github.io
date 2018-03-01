@@ -1,0 +1,9 @@
+body {
+    /* make the background image fit the screen */
+  background: url("../images/home.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* make the background image fit the screen */
+}

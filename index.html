@@ -1,115 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8" />
-   <title>Home</title>
-    <link rel="stylesheet" href="css/site.css" type="text/css" />
-</head>
-<body>
-    <div class="header">
-	<header>
-        <div class="container">
-			<div class="row">
-				<div class="col-md-12">
-                     <img class="circularimg" src="/photo.jpg" />
-                     <h1 style="text-align: center">My Profile</h1>
-                </div>
-                <div class="col-md-12>">
-                        
-                </div>
-			</div>
-        </div>
-        
-    </header>
-    <nav>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul>
-                        <li> <a href="/"> Home </a> </li> | 
-                        <li> <a href="/myProgram"> My Programs </a> </li> |  
-                        <li> <a href="/workHistory"> Work History </a> </li> |     
-                        <li> <a style="text-align: right" href="/contact"> Contact </a> </li>              
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-    </div>
-    <div class="main">
-        <table style="width:100%">
-            <tr id="r0">
-                <h1>Welcome</h1>
-                <p>My name is Ziyi Shi, a current full-time student studying Computer Programming & Analysis in Seneca College. I wrote this website using HTML, CSS, JavaScript and Node js. On this website, visitors are able to 
-                        view the completed courses, work history and the computer programs that I have completed. Additionally, Google Map API was invoked on this website, which enables users to view my location and the location of the
-                        company that I used to work for.
-                    </p>
-            </tr>
-            <tr id="r1" bgcolor="">
-                <td><h3>PROGRAMMING SKILLS:</h3></td>
-                <td> C & C++ Language</td> <td>SQL Statement</td> 
-                <td>HTML</td> <td>CSS</td> <td>JavaScript</td> <td>Node.js</td>
-                <td></td><td></td><td></td><td></td>
-            </tr>
-            <tr id="r2">
-                    <td><h3>PLATFORMS:</h3></td>
-                    <td>Oracle</td> <td>IBM DB2</td> <td>MS Visual Studio</td> 
-                    <td>Visual Studio Code</td> <td>Windows</td> <td>Linux</td> <td>Mac</td>
-            </tr>
-            <tr id="r3">
-                    <td><h3>COURSES COMPLETED:</h3></td>
-                <td><a class="main" value="Web Programming Principles 222" href="http://www.senecacollege.ca/cgi-bin/subject?s1=WEB222">
-                    Web Programming Principles 222 (view details) </a>
-                </td>
-                <td><a class="main" href="https://ict.senecacollege.ca/course/oop244"> Introduction to Object-Oriented Programming 244 (view details) </a>
-                </td>
-                <td><a class="main" href="https://cs.senecac.on.ca/course-old/dbs201"> Introduction to Database Design and SQL 201 (view details) </a></td>
-                <td><a class="main" href="http://www.senecacollege.ca/cgi-bin/subject?s1=DCF255"> Data Communications Fundamentals 255 (view details) </a></td>
-                <td><a class="main" href="https://ict.senecacollege.ca/course/ipc144"> Introduction to Programming Using C 144 (view details) </a></td>
-                <td><a class="main" href="https://cs.senecac.on.ca/course-old/uli101"> Introduction to Unix/Linux and the Internet 101 (view details)</a></td>
-                <td><a class="main" href="http://www.senecacollege.ca/cgi-bin/subject?s1=CPR101"> Computer Principles for Programmers 101 (view details)</a></td>
-                <td><a class="main" href="https://ict.senecacollege.ca/course/apc100?q=course/apc100"> Applied Professional Communication 100 (view details) </a></td>
-                <td><a class="main" href="https://ict.senecacollege.ca/course/eac150?q=course/eac150"> College English 150 (view details) </a></td>
-                <td><a class="main" href="http://www.senecacollege.ca/cgi-bin/subject?s1=PSY206"> Personality and Abnormal Behaviour 206 (view details)</a></td>
-            </tr>
-            
-            <tr id="r4">
-                <td><h3>COURSES COMPLETED BY DECEMBER 2017</h3></td>
-                <td><a class="main" href="https://ict.senecacollege.ca/course/JAC444?q=course/WEB322">	Web Programming Tools and Frameworks 322 (view details) </a></td>
-                <td><a class="main" href="https://ict.senecacollege.ca/course/oop345?q=course/oop345">Object-Oriented Software Development Using C++ 345 (view details)</a></td>
-                <td><a class="main" href="https://ict.senecacollege.ca/course/dbs301?q=course/dbs301"> Database Design II and SQL Using Oracle 301 (view details) </a></td>
-                <td><a class="main" href="https://ict.senecacollege.ca/course/sys366?q=course/sys366"> Requirements Gathering Using OO Models 366 (view details) </a></td>
-            </tr>
-            
-            
-        </table>
-        <h1 style="text-align: center; background-color: grey;">My Location</h1>
-        <div id="map"></div>
-    </div>
-    <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>© 2017 - Ziyi Shi</h2>
-                    </div>
-                </div>
-            </div>
-       </footer>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Profile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#157878">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href="public/css/bootstrap.min.css" rel="stylesheet">
+        <link href="public/css/home.css" rel="stylesheet">
+	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
-<script>
-function myMap() {  
-    var latlng = {lat: 43.7892552, lng: -79.3488023};
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: latlng
-    });
-    var marker = new google.maps.Marker({
-      position: latlng,
-      map: map
-    });
-}
-</script>
+	    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+  </head>    
+  <body>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuluPPqaDy7whTI5_ir5iNqQ7IGiFlkz8&callback=myMap"></script>
-</body>
+  </body>
 </html>
